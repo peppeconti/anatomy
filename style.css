@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -11,16 +11,44 @@ body {
     background-color: rgb(141, 255, 141);
     height: 100vh;
     overflow: hidden;
+    position: relative;
 }
 
 #svg {
-    border: 1px solid red;
-    height: 100%;
+    height: 90%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-svg {
-    transform: scale(1.3);
+g:not(#human-body, #body) {
+    opacity: 1;
+}
+
+g:not(#human-body, #body, #clipPath188, #g182, #Clip-path-group):hover{
+    filter: opacity(.7);
+}
+
+.modal {
+    position: absolute;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 80vh;
+    width: 600px;
+    background-color: #fff;
+}
+
+svg.new {
+    position: relative;
+    border: 1px solid red;
+}
+
+svg.new g {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    transform: translateY(-50%);
 }
