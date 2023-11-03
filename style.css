@@ -1,56 +1,63 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: rgb(141, 255, 141);
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(141, 255, 141);
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
 }
 
 #svg {
-    height: 90%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  height: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 g:not(#human-body, #body) {
-    cursor: pointer;
+  cursor: pointer;
 }
 
-g:not(#human-body, #body, #clipPath188, #g182, #Clip-path-group):hover{
-    filter: opacity(.7);
+g:not(#human-body, #body, #clipPath188, #g182, #Clip-path-group):hover {
+  filter: opacity(0.7);
 }
 
 .modal {
-    position: absolute;
-    display: none;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    height: 74vh;
-    width: 90vw;
-    max-width: 600px;
-    background-color: #fff;
+  position: absolute;
+  display: none;
+  flex-direction: column;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 74vh;
+  width: 90vw;
+  max-width: 600px;
+  background-color: #fff;
 }
 
 svg.new {
-    position: relative;
-    width: 100%;
-    height: 50%;
-    border: 1px solid red;
+  position: relative;
+  width: 100%;
+  height: 50%;
+  border: 1px solid red;
 }
 
 svg.new g {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+h2 {
+  height: 50%;
+  text-align: center;
+  border: 1px solid green;
 }

@@ -7,10 +7,14 @@ document.addEventListener("DOMContentLoaded", () => {
     e.addEventListener("click", (event) => {
      
       const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      const header = document.createElement('h2');
+      header.innerHTML = e.id;
       const copy = e.outerHTML;
-      //console.log(copy);
+      const copyHead = header.outerHTML;
+      const content = copy + copyHead
+      console.log(header);
       console.log(e.getBBox());
-      svg.innerHTML = copy;
+      svg.innerHTML = content;
       svg.classList.add('new');
       const copySVG = svg.outerHTML;
       modal.innerHTML = copySVG;
@@ -18,7 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
      
       console.log(modal);
 
-      modal.style.display = "block";
+      modal.style.display = "flex";
       const group = modal.querySelector(".organ");
       const newi = modal.querySelector(".new");
 
