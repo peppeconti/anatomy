@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       //console.log(factor);
 
-      group.style.transform = `translate(${-group.getBBox().x*factor}px, ${-group.getBBox().y*factor}px) scale(${factor})`
+      group.style.transform = `translate(${-group.getBBox().x*factor+(newi.clientWidth/2-group.getBBox().width*.5*factor)}px, ${-group.getBBox().y*factor+(newi.clientHeight*.1)/2}px) scale(${factor})`
       console.log(newi.getBBox().height / 100);
       console.log(newi.clientHeight)
     });

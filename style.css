@@ -21,11 +21,11 @@ body {
   justify-content: center;
 }
 
-g:not(#human-body, #body) {
+g.organ {
   cursor: pointer;
 }
 
-g:not(#human-body, #body, #clipPath188, #g182, #Clip-path-group):hover {
+g.organ:hover {
   filter: opacity(0.7);
 }
 
