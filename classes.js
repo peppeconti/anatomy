@@ -57,10 +57,12 @@ export class Modal {
   show() {
     this.backdrop.style.display = "block";
     this.modal.style.display = "flex";
+    window.addEventListener('resize', () => this.resize(this.modal, .75))
   }
 
   hide() {
     this.backdrop.style.display = "none";
     this.modal.style.display = "none";
+    window.removeEventListener('resize', () => this.resize(this.modal, .75));
   }
 }
