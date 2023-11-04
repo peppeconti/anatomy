@@ -22,11 +22,11 @@ body {
   justify-content: center;
 }
 
-g.organ {
+#svg g.organ {
   cursor: pointer;
 }
 
-g.organ:hover {
+#svg g.organ:hover {
   filter: opacity(0.7);
 }
 
