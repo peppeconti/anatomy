@@ -1,8 +1,20 @@
-document.addEventListener("DOMContentLoaded", () => {
+import { Selector, Modal, Organs } from "./modal.js";
+
+document.addEventListener('DOMContentLoaded', anatomy)
+
+function anatomy() {
+  const selector = new Selector();
+  const modal = new Modal(selector);
+  const organs = new Organs(selector);
+  
+}
+
+/*document.addEventListener("DOMContentLoaded", () => {
   const organs = Array.from(document.querySelectorAll(".organ"));
   const modal = document.querySelector(".modal");
   //console.log(organs);
-  modal.addEventListener('click', () => modal.style.display = "none")
+  //modal.addEventListener('click', () => modal.style.display = "none");
+  Modal.hide();
   organs.forEach((e) => {
     e.addEventListener("click", (event) => {
      
@@ -35,4 +47,4 @@ document.addEventListener("DOMContentLoaded", () => {
       console.log(newi.clientHeight)
     });
   });
-});
+});*/
