@@ -1,4 +1,4 @@
-import { text, capitalize } from './utils.js'
+import { text, capitalize } from "./utils.js";
 
 export class Selector {
   constructor() {}
@@ -14,9 +14,11 @@ export class Organs {
   }
 
   makeClickable(modal) {
-    this.organs.forEach(organ => organ.addEventListener('click', () => {
+    this.organs.forEach((organ) =>
+      organ.addEventListener("click", () => {
         modal.populate(organ);
-    }))
+      })
+    );
   }
 }
 
@@ -27,13 +29,29 @@ export class Modal {
   }
 
   populate(organ) {
-    //const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
     const svg = `<svg class="modal" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg">${organ.outerHTML}</svg>`;
-    const infos = `<div class="infos"><h2>${capitalize(organ.id)}</h2><p>${text[organ.id]}</p></div>`;
+    const infos = `<div class="infos"><h2>${capitalize(organ.id)}</h2><p>${
+      text[organ.id]
+    }</p></div>`;
     const modalContent = svg + infos;
     this.modal.innerHTML = modalContent;
     this.show();
-    console.log(this.modal);
+    this.resize(this.modal, .75);
+  }
+
+  resize(modal, size) {
+    const group = modal.querySelector(".organ");
+    const svg = modal.querySelector("svg.modal");
+    // DIMENSIONS
+    const svgWidth = svg.clientWidth;
+    const svgHeight = svg.clientHeight;
+    const groupData = group.getBBox();
+    // CALCULATE FACTOR
+    const factor = (svgHeight*size)/groupData.height;
+    // RESIZING
+    const translate = `translate(${-(groupData.x * factor) + ((svgWidth / 2) - (groupData.width / 2) * factor)}px, ${-(groupData.y * factor) + (svgHeight * (1 - size)) / 2}px)`;
+    const scale = `scale(${factor})`
+    group.style.transform = translate + scale;
   }
 
   show() {
