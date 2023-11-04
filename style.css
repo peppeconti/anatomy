@@ -64,7 +64,7 @@ svg.modal {
 div.infos {
   height: 50%;
   padding: 0 1.5rem 1.5rem;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 div.infos h2 {
